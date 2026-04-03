@@ -12,13 +12,6 @@ tower-http = { version = "0.6", features = ["cors", "trace"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 uuid = { version = "1", features = ["v4"] }
-alice-analytics = { path = "../../../ALICE-Analytics", optional = true }
-alice-semantic-telemetry = { path = "../../../ALICE-Semantic-Telemetry", optional = true }
-
-[features]
-default = []
-alice-core = ["alice-analytics", "alice-semantic-telemetry"]
-
 [profile.release]
 opt-level = 3
 lto = "fat"
