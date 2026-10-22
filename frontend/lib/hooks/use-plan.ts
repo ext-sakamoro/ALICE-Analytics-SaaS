@@ -20,6 +20,6 @@ export function usePlan() {
       setInfo({ plan, canDownload: CAN_DOWNLOAD[plan] ?? false, defaultPublic: DEFAULT_PUBLIC[plan] ?? false });
     } catch {} finally { setLoading(false); }
   }, []);
-  useEffect(() => { fetch_(); }, [fetch_]);
+  useEffect(() => { (async () => { await fetch_(); })(); }, [fetch_]);
   return { ...info, loading, refresh: fetch_ };
 }

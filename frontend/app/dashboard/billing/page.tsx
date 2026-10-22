@@ -37,7 +37,7 @@ export default function BillingPage() {
   const handleUpgrade = async (p: typeof plans[0]) => {
     if (p.name === 'Enterprise') { window.open('mailto:sakamoro@alicelaw.net?subject=ALICE Analytics%20Enterprise', '_blank'); return; }
     if (!p.priceId) return;
-    try { const r = await fetch('/api/stripe/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ priceId: p.priceId, plan: p.name }) }); const { url } = await r.json(); if (url) window.location.href = url; } catch {}
+    try { const r = await fetch('/api/stripe/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ priceId: p.priceId, plan: p.name }) }); const { url } = await r.json(); if (url) window.location.assign(url); } catch {}
   };
 
   return (

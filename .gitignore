@@ -24,3 +24,5 @@ export-data/
 redis-data/
 CLAUDE.md
 .claude/
+frontend/next-env.d.ts
+frontend/tsconfig.tsbuildinfo

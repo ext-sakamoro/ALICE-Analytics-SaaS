@@ -21,6 +21,6 @@ export function useUsage() {
       setUsage({ today: count || 0, limit, plan });
     } catch {} finally { setLoading(false); }
   }, []);
-  useEffect(() => { fetch_(); }, [fetch_]);
+  useEffect(() => { (async () => { await fetch_(); })(); }, [fetch_]);
   return { usage, loading, refresh: fetch_ };
 }
