@@ -75,7 +75,7 @@ export default function AdminPage() {
                   <td className="p-3">{u.banned ? 'Yes' : 'No'}</td>
                   <td className="p-3 space-x-2">
                     <button onClick={() => updateUser(u.id, { banned: !u.banned })} className="text-xs text-red-500 hover:underline">{u.banned ? 'Unban' : 'Ban'}</button>
-                    <select value={u.plan} onChange={e => updateUser(u.id, { plan: e.target.value })} className="text-xs border rounded px-1 py-0.5">
+                    <select value={u.plan} onChange={e => updateUser(u.id, { plan: e.target.value })} className="text-xs border rounded-sm px-1 py-0.5">
                       <option>Free</option><option>General</option><option>Pro</option><option>Enterprise</option>
                     </select>
                   </td>
