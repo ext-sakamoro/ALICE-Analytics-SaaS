@@ -5,8 +5,8 @@ interface Stats { uptime_secs: number; total_users: number; total_projects: numb
 interface User { id: string; email: string; full_name: string; plan: string; role: string; banned: boolean; created_at: string }
 
 async function adminFetch(path: string, opts?: RequestInit) {
-  const workerUrl = process.env.NEXT_PUBLIC_WORKER_URL || '';
-  return fetch(`${workerUrl}${path}`, { ...opts, headers: { 'Content-Type': 'application/json', ...opts?.headers } });
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
+  return fetch(`${apiUrl}${path}`, { ...opts, headers: { 'Content-Type': 'application/json', ...opts?.headers } });
 }
 
 export default function AdminPage() {

@@ -10,8 +10,8 @@ async function getToken(): Promise<string> {
 
 async function adminFetch(path: string, opts?: RequestInit) {
   const token = await getToken();
-  const workerUrl = process.env.NEXT_PUBLIC_WORKER_URL || '';
-  return fetch(`${workerUrl}${path}`, {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || '';
+  return fetch(`${apiUrl}${path}`, {
     ...opts,
     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json', ...opts?.headers },
   });
